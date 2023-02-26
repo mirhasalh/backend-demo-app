@@ -13,5 +13,6 @@ A resources related to this this project:
 
 A features in this project:
 
+- MongoDB
 - Authentication with JWT
 - Simple CRUD
