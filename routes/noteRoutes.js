@@ -5,10 +5,11 @@ const {
   setNote,
   updateNote,
   deleteNotes,
-} = require("../controllers/noteControllers");
+} = require("../controllers/noteController");
+const { protect } = require("../middleware/authMiddleware");
 
-router.route("/").get(getNotes).post(setNote);
+router.route("/").get(protect, getNotes).post(protect, setNote);
 
-router.route("/:id").put(updateNote).delete(deleteNotes);
+router.route("/:id").put(protect, updateNote).delete(protect, deleteNotes);
 
 module.exports = router;
